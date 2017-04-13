@@ -6,50 +6,80 @@ lines = ['Gyle Centre', 'Edinburgh Park', 'Murrayfield Stadium', 'Haymarket', 'P
 # # 1. Work out how many stops there are in the array
 # puts lines.length()
 
+# lines.count()
+# lines.size()
+
 
 # # 2. Return 'Edinburgh Park' from the array
 # puts lines[1]
+# lines[-4]
 
 # 3. How many ways can we return 'Princes Street' from the array?
 # puts lines[-1]
+# puts lines[4]
+# lines.at(4)
+# lines.last()
+# lines.fetch(4) throws an error
+# puts lines.fetch(10, "No train station.")
+
 
 # 4. Work out the index position of 'Haymarket'
-# puts lines.index('Haymarket')
+# puts lines.index('Haymarket') # find the place in the index
+# counter = 0
+# for stop in lines do
+#   if stop == "Haymarket"
+#     puts counter
+#   else
+#     counter += 1
+# end
 
 # # 5. Add 'Airport' to the start of the array
-# lines.unshift('Airport')
+# lines.unshift('Airport') # adds to first part of array
 # puts lines
+
+#lines.insert(0, 'Airport')
+
+
 # # 6. Add 'York Place' to the end of the array
 # lines.push('York Place')
 # puts lines
 #
+# lines << 'York Place'
+# #
 # # 7. Remove 'Edinburgh Park' from the array using it's name
 # puts lines.delete('Edinburgh Park')
 # puts lines
 
 # # 8. Delete 'Edinburgh Park' from the array by index
-# lines.delete_at(1)
+# lines.delete_at(1) # specific place you want to delete
 # puts lines
 # # 9. Reverse the positions of the stops in the array
-# puts lines.reverse
+# puts lines.reverse!
 
 
 ### B. Given the following data structure:
 
 my_hash = {"0" => "Zero", 1 => "One", :two => "Two", "two" => 2}
 
-# # 1. How would you return the string `"One"`?
-# puts my_hash[1]
+# # # 1. How would you return the string `"One"`?
+# puts my_hash[1] # hash_name[key]
+# puts my_hash.fetch(1)
+
 # 2. How would you return the string `"Two"`?
 # puts my_hash[:two]
+
+
 # # 3. How would you return the number `2`?
 # puts my_hash["two"]
 # 4. How would you add `{3 => "Three"}` to the hash?
 # my_hash[3] = "Three"
 # puts my_hash
+
 # 5. How would you add `{:four => 4}` to the hash?
 # my_hash[:four] = 4
 # puts my_hash
+
+
 ### C. Given the following data structure:
 
 users = {
@@ -84,29 +114,43 @@ users = {
   }
 }
 
+
 # # 1. Return Jonathan's Twitter handle (i.e. the string `"jonnyt"`)
 # puts users["Jonathan"][:twitter]
-# 2. Return Erik's hometown
+
+# # 2. Return Erik's hometown
 # puts users["Erik"][:home_town]
+
 # 3. Return the array of Erik's favorite numbers
 # puts users["Erik"][:favourite_numbers]
+
 # 4. Return the type of Avril's pet Colin
 # puts users["Avril"][:pets]["colin"]
+
 # 5. Return the smallest of Erik's favorite numbers
 # puts users["Erik"][:favourite_numbers].sort.first()
+#.min get smallest number
+#.max get biggest number
+
 # 6. Add the number `7` to Erik's favorite numbers
 # users["Erik"][:favourite_numbers].push(7)
+
+# if you wanted to add 7
+
 # puts users["Erik"][:favourite_numbers]
+
 # 7. Change Erik's hometown to Edinburgh
 # users["Erik"][:home_town] = "Edinburgh"
 # puts users["Erik"][:home_town]
-# # 8. Add a pet dog to Erik called "Fluffy"
+
+# # # 8. Add a pet dog to Erik called "Fluffy"
 # users["Erik"][:pets]["Fluffy"] = :dog
-# ap users["Erik"][:pets]
-# 9. Add yourself to the users hash
-users["Charlie"] = {
-  :twitter => "ch4rlie_wood",
-  :favourite_numbers => [1, 2, 3, 4],
-  :home_town => "London"
-}
-puts users["Charlie"]
+# puts users["Erik"][:pets]
+
+# # 9. Add yourself to the users hash
+# users["Charlie"] = {
+#   :twitter => "ch4rlie_wood",
+#   :favourite_numbers => [1, 2, 3, 4],
+#   :home_town => "London"
+# }
+# puts users["Charlie"]
